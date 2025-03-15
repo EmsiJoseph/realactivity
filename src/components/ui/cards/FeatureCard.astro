@@ -23,12 +23,24 @@ type Props = {
 const { title , subtitle, image, link } = Astro.props
 ---
 
-<Card
-	title={title}
-	subtitle={subtitle}
-	titleSize="xl"
-	link={link}
-	image={image}
-	type="image-bottom"
-	classes="!bg-neutral-50 !shadow-none dark:!bg-neutral-900 h-full justify-between border border-neutral-100 dark:border-neutral-800"
-/>
+<div class="feature-card-wrapper">
+  <Card
+    title={title}
+    subtitle={subtitle}
+    titleSize="xl"
+    link={link}
+    image={image}
+    type="image-bottom"
+    classes="!bg-neutral-50 !shadow-none dark:!bg-neutral-900 h-full justify-between border border-neutral-100 dark:border-neutral-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:!bg-primary-500 hover:!text-white hover:border-primary-600"
+  />
+</div>
+
+<style>
+  /* Ensure title text changes to white on hover */
+  .feature-card-wrapper:hover :global(h1),
+  .feature-card-wrapper:hover :global(h2),
+  .feature-card-wrapper:hover :global(h3),
+  .feature-card-wrapper:hover :global(.card-title) {
+    color: white !important;
+  }
+</style>

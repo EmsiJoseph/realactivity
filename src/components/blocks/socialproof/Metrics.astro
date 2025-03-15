@@ -1,0 +1,31 @@
+---
+import Section from "../../ui/Section.astro";
+import Metric from "./Metric.astro";
+import Button from "../../ui/Button.astro";
+
+const metrics = [
+    { value: "$20.8M+", label: "average annual savings for hospitals" },
+    { value: "1.1M+", label: "provider attestations automated" },
+    { value: "90-day", label: "ROI guarantee" },
+    { value: "40%", label: "faster EHR documentation" },
+];
+---
+
+<Section id="metrics-section" class="relative" padding="top">
+    <div class="flex flex-col items-center md:items-start md:flex-row md:justify-between w-full max-w-6xl mx-auto gap-4">
+        <!-- Title -->
+        <h2 class="text-2xl sm:text-3xl font-semibold text-center md:text-left">Why healthcare leaders choose RealActivity?</h2>
+
+        <!-- Guide Badge (Positioned to the Right) -->
+        <Button variation="outline" class="self-center md:self-auto">
+            Guide: How to maximize ROI using AI?
+        </Button>
+    </div>
+
+    <!-- Metrics Row with Space Between -->
+    <div class="mt-8 w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-6">
+        {metrics.map((metric) => (
+                <Metric value={metric.value} label={metric.label} />
+        ))}
+    </div>
+</Section>

@@ -1,0 +1,166 @@
+---
+import { Image } from "astro:assets";
+
+const logos = [
+    { src: "/partners/athenahealth.svg", alt: "Athenahealth" },
+    { src: "/partners/dartmouth-health.svg", alt: "Dartmouth Health" },
+    { src: "/partners/epic.svg", alt: "Epic" },
+    { src: "/partners/meta.svg", alt: "Meta" },
+    { src: "/partners/microsoft.svg", alt: "Microsoft" },
+    { src: "/partners/openai.svg", alt: "OpenAI" },
+    { src: "/partners/oracle.svg", alt: "Oracle" },
+    { src: "/partners/workday.svg", alt: "Workday" }
+];
+
+const logoSize = {
+    width: 120,
+    height: 75
+};
+---
+
+<div class="bg-neutral-50 dark:bg-neutral-900 pt-10 pb-6">
+    <!-- Centered Text -->
+    <p class="text-base font-medium text-center mx-auto max-w-2xl pb-1 animate-entrance-text opacity-0">
+        Collaborating with Leaders in Healthcare & Technology
+    </p>
+
+    <div class="logos animate-entrance-carousel opacity-0" id="logo-carousel">
+        <div class="logos-wrapper">
+            <div class="logos-slide">
+                {logos.map((logo) => (
+                        <Image src={logo.src} alt={logo.alt} width={logoSize.width} height={logoSize.height} />
+                ))}
+                {logos.map((logo) => (
+                        <Image src={logo.src} alt={logo.alt} width={logoSize.width} height={logoSize.height} />
+                ))}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Intersection Observer to detect when logo carousel is visible
+    document.addEventListener('DOMContentLoaded', function() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add visible class to trigger animation
+                    entry.target.classList.add('visible');
+                    
+                    // Stop observing after it's been seen once
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 }); // Trigger when at least 10% of the element is visible
+
+        // Observe both the text and carousel
+        const carousel = document.getElementById('logo-carousel');
+        const text = document.querySelector('.animate-entrance-text');
+        
+        if (carousel) observer.observe(carousel);
+        if (text) observer.observe(text);
+    });
+</script>
+
+<style>
+    .logos {
+        overflow: hidden;
+        padding: 20px 0; /* Reduced padding to be closer to text */
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    .logos-wrapper {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .logos-slide {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        animation: infiniteScroll 30s linear infinite; /* Slower animation for smoother appearance */
+        min-width: 200%;
+    }
+
+    .logos-slide img {
+        margin: 0 30px;
+        flex-shrink: 0;
+    }
+
+    /* Improved infinite scrolling animation */
+    @keyframes infiniteScroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    /* Entrance animations */
+    .animate-entrance-text.visible {
+        animation: fadeInUp 0.8s ease forwards;
+        animation-delay: 0.2s;
+    }
+
+    .animate-entrance-carousel.visible {
+        animation: fadeInUp 0.8s ease forwards;
+        animation-delay: 0.5s;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Improved fade effects with better blending */
+    .logos::before,
+    .logos::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 8%; /* Reduced width for subtlety */
+        height: 100%;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    .logos::before {
+        left: 0;
+        background: linear-gradient(to right, var(--bg-color) 0%, transparent 100%);
+    }
+
+    .logos::after {
+        right: 0;
+        background: linear-gradient(to left, var(--bg-color) 0%, transparent 100%);
+    }
+
+    /* Set the background color variable based on color mode */
+    :global(.dark) .logos::before,
+    :global(.dark) .logos::after {
+        --bg-color: #171717; /* neutral-900 */
+    }
+
+    .logos::before,
+    .logos::after {
+        --bg-color: #fafafa; /* neutral-50 */
+    }
+
+    /* Pause on hover but with a smooth transition */
+    .logos-slide {
+        transition: animation-play-state 0.5s ease;
+    }
+    
+    .logos:hover .logos-slide {
+        animation-play-state: paused;
+    }
+</style>

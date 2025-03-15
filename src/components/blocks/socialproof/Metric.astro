@@ -1,0 +1,69 @@
+---
+type Props = {
+    value: string;
+    label: string;
+};
+
+const { value, label } = Astro.props;
+// Extract numeric part and suffix for animation
+const numericMatch = value.match(/([0-9.]+)([^0-9.]*)/);
+const numericValue = numericMatch ? parseFloat(numericMatch[1]) : 0;
+const suffix = numericMatch ? numericMatch[2] : "";
+---
+
+<div class="flex flex-col items-center text-center md:items-start md:text-left mb-4 md:mb-0">
+    <p class="text-3xl sm:text-4xl md:text-5xl font-bold text-black">
+        <span class="counter-value" data-value={numericValue} data-suffix={suffix}>0{suffix}</span>
+    </p>
+    <p class="text-sm sm:text-base md:text-lg text-black mt-1">{label}</p>
+</div>
+
+<script>
+    // Counter animation function
+    function animateCounter(element, targetValue, suffix, duration = 2000) {
+        let startTime = null;
+        const startValue = 0;
+        const decimalPlaces = String(targetValue).includes('.') ? 
+            String(targetValue).split('.')[1].length : 0;
+            
+        function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const progress = Math.min((timestamp - startTime) / duration, 1);
+            const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+            const currentValue = startValue + (targetValue - startValue) * easeProgress;
+            
+            element.textContent = currentValue.toFixed(decimalPlaces) + suffix;
+            
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        }
+        
+        window.requestAnimationFrame(step);
+    }
+
+    // Set up Intersection Observer to trigger animation when counters are visible
+    document.addEventListener('DOMContentLoaded', () => {
+        const counters = document.querySelectorAll('.counter-value');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    const targetValue = parseFloat(element.getAttribute('data-value'));
+                    const suffix = element.getAttribute('data-suffix');
+                    
+                    animateCounter(element, targetValue, suffix);
+                    observer.unobserve(element); // Only animate once
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when at least 10% of the element is visible
+        });
+        
+        // Observe all counter elements
+        counters.forEach(counter => {
+            observer.observe(counter);
+        });
+    });
+</script>

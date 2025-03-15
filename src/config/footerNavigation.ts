@@ -2,110 +2,188 @@
 // ------------
 // Description: The footer navigation data for the website.
 export interface Logo {
-	src: string
-	alt: string
-	text: string
+    src: string
+    alt: string
+    text: string
 }
 
 export interface FooterAbout {
-	title: string
-	aboutText: string
-	logo: Logo
+    title: string
+    aboutText: string
+    logo: Logo
 }
 
 export interface SubCategory {
-	subCategory: string
-	subCategoryLink: string
+    subCategory: string
+    subCategoryLink: string
 }
 
 export interface FooterColumn {
-	category: string
-	subCategories: SubCategory[]
+    category: string
+    subCategories: SubCategory[]
 }
 
 export interface SubFooter {
-	copywriteText: string
+    copyRightText: string
+    links?: SubCategory[]
 }
 
 export interface FooterData {
-	footerAbout: FooterAbout
-	footerColumns: FooterColumn[]
-	subFooter: SubFooter
+    footerAbout: FooterAbout
+    footerColumns: FooterColumn[]
+    subFooter: SubFooter
 }
 
 export const footerNavigationData: FooterData = {
-	footerAbout: {
-		title: 'Foxi.',
-		aboutText:
-			'Expertly made, responsive, accessible components in React and HTML ready to be used on your website or app. Just copy and paste them on your Tailwind CSS project.',
-		logo: {
-			src: '/logo.svg',
-			alt: 'The tailwind astro theme',
-			text: 'Foxi.'
-		}
-	},
-	footerColumns: [
-		{
-			category: 'Product',
-			subCategories: [
-				{
-					subCategory: 'Features',
-					subCategoryLink: '/features'
-				},
-				{
-					subCategory: 'FAQ',
-					subCategoryLink: '/faq'
-				},
-				{
-					subCategory: 'Pricing',
-					subCategoryLink: '/pricing'
-				},
-				{
-					subCategory: 'Changelog',
-					subCategoryLink: '/changelog'
-				},
-				{
-					subCategory: 'Terms',
-					subCategoryLink: '/terms'
-				}
-			]
-		},
-		{
-			category: 'About us',
-			subCategories: [
-				{
-					subCategory: 'About us',
-					subCategoryLink: '/'
-				},
-				{
-					subCategory: 'News',
-					subCategoryLink: '/blog'
-				},
-				{
-					subCategory: 'Careers',
-					subCategoryLink: '/blog'
-				}
-			]
-		},
-		{
-			category: 'Get in touch',
-			subCategories: [
-				{
-					subCategory: 'Contact',
-					subCategoryLink: '/contact'
-				},
-				{
-					subCategory: 'Support',
-					subCategoryLink: '/contact'
-				},
-				{
-					subCategory: 'Join us',
-					subCategoryLink: '/contact'
-				}
-			]
-		}
-	],
-	subFooter: {
-		copywriteText: '© Foxi 2024.'
-	}
+    footerAbout: {
+        title: 'RealActivity',
+        aboutText:
+            'AI-driven solutions that streamline healthcare workflows, enhance efficiency, and maximize ROI. Designed for providers and executives, it automates documentation, compliance, and revenue management—seamlessly integrating into your existing systems.',
+        logo: {
+            src: '/logo.svg',
+            alt: 'RealActivity',
+            text: 'RealActivity'
+        }
+    },
+    footerColumns: [
+        {
+            category: 'Solutions',
+            subCategories: [
+                {
+                    subCategory: 'RAPS Copilot',
+                    subCategoryLink: '/copilot'
+                },
+                {
+                    subCategory: 'Intelligent RVU Agent',
+                    subCategoryLink: '/agents'
+                },
+                {
+                    subCategory: 'CMS Compliance Agent',
+                    subCategoryLink: '/agents'
+                },
+                {
+                    subCategory: 'Wheelhouse AI CoE',
+                    subCategoryLink: '/wheelhouse-ai-coe'
+                },
+                {
+                    subCategory: 'Strategic Advisory Services',
+                    subCategoryLink: '/solutions/advisory-services'
+                }
+            ]
+        },
+        {
+            category: 'Who we serve',
+            subCategories: [
+                {
+                    subCategory: 'Healthcare executives',
+                    subCategoryLink: '/executives'
+                },
+                {
+                    subCategory: 'Physicians & Clinicians',
+                    subCategoryLink: '/clinicians'
+                },
+                {
+                    subCategory: 'Compliance & Legal Teams',
+                    subCategoryLink: '/compliance'
+                },
+                {
+                    subCategory: 'Clinical & IT Leadership',
+                    subCategoryLink: '/leadership'
+                },
+                {
+                    subCategory: 'Global Healthcare Cloud and AI Community',
+                    subCategoryLink: '/community'
+                }
+            ]
+        },
+        {
+            category: 'Company',
+            subCategories: [
+                {
+                    subCategory: 'About us',
+                    subCategoryLink: '/company/about'
+                },
+                {
+                    subCategory: 'Leadership',
+                    subCategoryLink: '/company/leadership'
+                },
+                {
+                    subCategory: 'Careers',
+                    subCategoryLink: '/company/careers'
+                },
+                {
+                    subCategory: 'Partners',
+                    subCategoryLink: '/company/partners'
+                },
+                {
+                    subCategory: 'Partner with us',
+                    subCategoryLink: '/company/partners'
+                }
+            ]
+        },
+        {
+            category: 'Connect',
+            subCategories: [
+                {
+                    subCategory: 'Book a Consultation (1 🌳 Planted)',
+                    subCategoryLink: '/clinicians/consultation'
+                },
+                {
+                    subCategory: 'Talk to an Expert',
+                    subCategoryLink: '/clinicians/expert'
+                },
+                {
+                    subCategory: 'Events',
+                    subCategoryLink: '/clinicians/events'
+                },
+                {
+                    subCategory: 'Join our community',
+                    subCategoryLink: '/clinicians/community'
+                }
+            ]
+        },
+
+        {
+            category: 'Resources',
+            subCategories: [
+                {
+                    subCategory: 'Blogs',
+                    subCategoryLink: '/resources/blogs'
+                },
+                {
+                    subCategory: 'Briefs & Data Sheets',
+                    subCategoryLink: '/resources/briefs'
+                },
+                {
+                    subCategory: 'Strategic Guides',
+                    subCategoryLink: '/resources/guides'
+                },
+                {
+                    subCategory: 'Case Studies',
+                    subCategoryLink: '/resources/case-studies'
+                },
+                {
+                    subCategory: 'Radical AI Governance',
+                    subCategoryLink: '/radical-ai'
+                },
+                {
+                    subCategory: 'ROI Calculator',
+                    subCategoryLink: '/resources/roi-calculator'
+                }
+            ]
+        }
+    ],
+    subFooter: {
+        copyRightText: 'RealActivity, LLC. All rights reserved.',
+        links: [
+            {
+                subCategory: 'Terms',
+                subCategoryLink: '/terms'
+            },
+            {
+                subCategory: 'Sitemap',
+                subCategoryLink: '/sitemap'
+            }
+            ]
+    }
 }

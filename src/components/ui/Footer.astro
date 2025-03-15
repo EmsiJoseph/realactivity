@@ -13,6 +13,15 @@ import { socialLinks } from '../../config/socialLinks'
 import { footerNavigationData } from '../../config/footerNavigation'
 
 const { footerAbout, footerColumns, subFooter } = footerNavigationData
+
+// Group categories into pairs for the 3-column layout
+const columnGroups = [
+    [footerColumns[0], footerColumns[1]], 
+    [footerColumns[2], footerColumns[3]], 
+    [footerColumns[4]]                    
+];
+
+const year = new Date().getFullYear();
 ---
 
 <footer class="footer">
@@ -25,21 +34,37 @@ const { footerAbout, footerColumns, subFooter } = footerNavigationData
 						<img src={footerAbout.logo.src} alt={footerAbout.logo.alt} width="32" height="32" />
 						{footerAbout.logo.text}
 					</a>
-					<p>
-						{footerAbout.aboutText}
-					</p>
+					
+					{/* Add social links below the logo */}
+					<div class="footer__social">
+						<ul>
+							{
+								socialLinks.map((social) => (
+									<li>
+										<a href={social.link} aria-label={social.name}>
+											<Icon name={social.icon} />
+										</a>
+									</li>
+								))
+							}
+						</ul>
+					</div>
 				</div>
 				{
-					footerColumns.map((column) => (
-						<div class="footer__col">
-							<h3>{column.category}</h3>
-							<ul>
-								{column.subCategories.map((subCategory) => (
-									<li>
-										<a href={subCategory.subCategoryLink}> {subCategory.subCategory} </a>
-									</li>
-								))}
-							</ul>
+					columnGroups.map((group) => (
+						<div class="footer__col footer__col-group">
+							{group.map((column) => (
+								<div class="footer__category">
+									<h3>{column.category}</h3>
+									<ul>
+										{column.subCategories.map((subCategory) => (
+											<li>
+												<a href={subCategory.subCategoryLink}> {subCategory.subCategory} </a>
+											</li>
+										))}
+									</ul>
+								</div>
+							))}
 						</div>
 					))
 				}
@@ -50,21 +75,21 @@ const { footerAbout, footerColumns, subFooter } = footerNavigationData
 	<div class="footer__sub">
 		<div class="footer__container">
 			<div class="footer__sub-cols">
-				<div class="footer__sub-col">{subFooter.copywriteText}</div>
-				<nav aria-labelledby="footer-social-links-dark" class="footer__sub-col text-right">
-					<h2 class="sr-only" id="footer-social-links-dark">Social Media Links</h2>
-					<ul>
-						{
-							socialLinks.map((social) => (
-								<li>
-									<a href={social.link} aria-label={social.name}>
-										<Icon name={social.icon} />
-									</a>
-								</li>
-							))
-						}
-					</ul>
-				</nav>
+				<div class="footer__sub-col">
+					<div class="footer__links">
+						<span>© {year} {subFooter.copyRightText}</span>
+						{subFooter.links && subFooter.links.map((link, index) => (
+							<>
+								<span class="footer__dot-separator">
+									<svg width="4" height="5" viewBox="0 0 4 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M2.01562 4.7207C1.47396 4.7207 1.00781 4.5306 0.617188 4.15039C0.226562 3.77018 0.03125 3.30924 0.03125 2.76758C0.03125 2.23112 0.226562 1.76758 0.617188 1.37695C1.00781 0.98112 1.47396 0.783203 2.01562 0.783203C2.55729 0.783203 3.01823 0.978516 3.39844 1.36914C3.77865 1.75977 3.96875 2.22591 3.96875 2.76758C3.96875 3.30924 3.77865 3.77018 3.39844 4.15039C3.01823 4.5306 2.55729 4.7207 2.01562 4.7207Z" fill="currentColor"/>
+									</svg>
+								</span>
+								<a href={link.subCategoryLink}>{link.subCategory}</a>
+							</>
+						))}
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -81,7 +106,7 @@ const { footerAbout, footerColumns, subFooter } = footerNavigationData
 		@apply border-t border-neutral-100 bg-neutral-50 pb-12 pt-16 text-sm dark:border-neutral-900 dark:bg-neutral-950 [&_li]:mb-2 [&_li]:leading-6;
 	}
 	.footer__main h3 {
-		@apply mb-6 text-base font-medium leading-8 text-neutral-700 dark:text-neutral-50;
+		@apply mb-3 text-base font-medium leading-8 text-neutral-700 dark:text-neutral-50;
 	}
 	.footer__main-brand {
 		@apply mb-6 flex items-center gap-2 whitespace-nowrap font-headings text-xl font-bold leading-6 text-neutral-700 focus:outline-none dark:text-neutral-50;
@@ -91,12 +116,21 @@ const { footerAbout, footerColumns, subFooter } = footerNavigationData
 	}
 
 	.footer__cols {
-		@apply grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12;
+		@apply grid grid-cols-4 gap-3 md:grid-cols-8 lg:grid-cols-12;
 	}
 
 	.footer__col {
-		@apply col-span-2 first:col-span-4 md:col-span-4 md:first:col-span-8 lg:col-span-2 lg:first:col-span-6 lg:first:max-w-96;
+		@apply col-span-4 lg:col-span-3 first:lg:col-span-3;
 	}
+	
+	.footer__col-group {
+		@apply flex flex-col gap-4;
+	}
+	
+	.footer__category:not(:last-child) {
+		@apply mb-3;
+	}
+	
 	.footer__sub {
 		@apply border-t border-neutral-200 bg-neutral-100 py-4 text-sm text-neutral-600 dark:border-neutral-900 dark:bg-neutral-800/50 dark:text-neutral-400;
 	}
@@ -106,11 +140,33 @@ const { footerAbout, footerColumns, subFooter } = footerNavigationData
 	.footer__sub a {
 		@apply [&_svg]:h-4 [&_svg]:w-4 [&_svg]:shrink-0;
 	}
+	.footer__links {
+		@apply flex flex-wrap items-center gap-2;
+	}
+	.footer__dot-separator {
+		@apply flex items-center justify-center opacity-60;
+	}
 	.footer__sub-cols {
 		@apply grid grid-cols-4 items-center gap-6 md:grid-cols-8 lg:grid-cols-12;
 	}
 
 	.footer__sub-col {
 		@apply col-span-2 md:col-span-4 lg:col-span-6;
+	}
+	
+	.footer__social {
+		@apply mb-6;
+	}
+	
+	.footer__social ul {
+		@apply flex items-center gap-4;
+	}
+	
+	.footer__social a {
+		@apply flex items-center justify-center rounded-full bg-neutral-200/50 p-2 transition-colors hover:bg-primary-100 dark:bg-neutral-800 dark:hover:bg-primary-900;
+	}
+	
+	.footer__social svg {
+		@apply h-4 w-4 text-neutral-700 dark:text-neutral-200;
 	}
 </style>

@@ -8,22 +8,45 @@ import Features from '../components/blocks/features/FeatureCards.astro'
 import Testimonial from '../components/blocks/testimonials/BasicDark.astro'
 import HighlightBlocks from '../components/blocks/highlights/HightlightRows.astro'
 import CTA from '../components/blocks/CTA/BasicDark.astro'
+import YouTubeEmbed from '../components/ui/YouTubeEmbed.astro'
 
 // Content
 // - Testimonial background
 import testimonialBackground from '../assets/testimonial-bg-01.webp'
+import LogoCarousel from "../components/blocks/hero/LogoCarousel.astro";
+import MoreIntegrations from "../components/blocks/features/MoreIntegrations.astro";
+import Basic from "../components/blocks/socialproof/Basic.astro";
+import Metrics from "../components/blocks/socialproof/Metrics.astro";
 // - SEO
 const SEO = {
-	title: 'Foxi | Your Productivity Toolkit',
-	description:
-		'Foxi is a powerful productivity toolkit designed to enhance your workflow and boost your productivity. With features like analytics, security, and integrations, Foxi is the perfect solution for your business.'
+    title: 'RealActivity',
+    description:
+        'Reduce Physician Burnout & Operational Costs with AI built for Healthcare.'
 }
 ---
 
 <Layout title={SEO.title} description={SEO.description}>
-	<Hero />
-	<Features />
-	<Testimonial bg={testimonialBackground} bgPosition="right" />
-	<HighlightBlocks />
-	<CTA />
+    <Hero/>
+    <LogoCarousel/>
+    <Features/>
+    <MoreIntegrations/>
+    <Testimonial bg={testimonialBackground} bgPosition="right"/>
+    <Metrics/>
+    <HighlightBlocks/>
+    <YouTubeEmbed
+            url="https://youtu.be/Ls3WOE9dhOQ?si=44ZYoMPxytFk-r5V"
+            width="100%%"
+            aspectRatio="16/9"
+            class="max-w-4xl"
+    />
+    // Wheelhouse
+    // Get AI Ready
+    // Raps Copilot
+    // Agents Suite
+    // One Seed
+    // Security Badges
+    // Advisory Services
+    // Founders Hub
+    // Community
+    <CTA/>
 </Layout>

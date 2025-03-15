@@ -7,10 +7,16 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://foxi.netlify.app/",
+  site: "https://pauls579.sg-host.com/",
   integrations: [
     tailwind(),
-    icon(),
+    icon({
+      // Add the icon sets you want to use
+      include: {
+        mdi: ['*'], // Include all MDI icons
+        'simple-icons': ['*'] // Include all Simple Icons
+      }
+    }),
     sitemap(),
     partytown({
       config: {
