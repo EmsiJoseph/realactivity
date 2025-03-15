@@ -97,19 +97,19 @@ const year = new Date().getFullYear();
 
 <style>
 	.footer {
-		@apply text-neutral-500 dark:text-neutral-300;
+		@apply text-neutral-100 bg-secondary-500;
 	}
 	.footer a {
-		@apply transition-colors duration-300 hover:text-primary-500 focus:text-primary-600;
+		@apply transition-colors duration-300 hover:text-primary-300 focus:text-primary-400;
 	}
 	.footer__main {
-		@apply border-t border-neutral-100 bg-neutral-50 pb-12 pt-16 text-sm dark:border-neutral-900 dark:bg-neutral-950 [&_li]:mb-2 [&_li]:leading-6;
+		@apply border-t border-secondary-400 bg-secondary-500 pb-12 pt-16 text-sm [&_li]:mb-2 [&_li]:leading-6;
 	}
 	.footer__main h3 {
-		@apply mb-3 text-base font-medium leading-8 text-neutral-700 dark:text-neutral-50;
+		@apply mb-3 text-base font-medium leading-8 text-neutral-50;
 	}
 	.footer__main-brand {
-		@apply mb-6 flex items-center gap-2 whitespace-nowrap font-headings text-xl font-bold leading-6 text-neutral-700 focus:outline-none dark:text-neutral-50;
+		@apply mb-6 flex items-center gap-2 whitespace-nowrap font-headings text-xl font-bold leading-6 text-white focus:outline-none;
 	}
 	.footer__container {
 		@apply container mx-auto px-6;
@@ -132,7 +132,7 @@ const year = new Date().getFullYear();
 	}
 	
 	.footer__sub {
-		@apply border-t border-neutral-200 bg-neutral-100 py-4 text-sm text-neutral-600 dark:border-neutral-900 dark:bg-neutral-800/50 dark:text-neutral-400;
+		@apply border-t border-secondary-600 bg-secondary-600 py-4 text-sm text-neutral-200;
 	}
 	.footer__sub ul {
 		@apply flex items-center justify-end gap-6;
@@ -163,10 +163,10 @@ const year = new Date().getFullYear();
 	}
 	
 	.footer__social a {
-		@apply flex items-center justify-center rounded-full bg-neutral-200/50 p-2 transition-colors hover:bg-primary-100 dark:bg-neutral-800 dark:hover:bg-primary-900;
+		@apply flex items-center justify-center rounded-full bg-secondary-400 p-2 transition-colors hover:bg-primary-500 dark:hover:bg-primary-600;
 	}
 	
 	.footer__social svg {
-		@apply h-4 w-4 text-neutral-700 dark:text-neutral-200;
+		@apply h-4 w-4 text-white;
 	}
 </style>

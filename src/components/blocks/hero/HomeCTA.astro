@@ -21,6 +21,7 @@ import heroImage from '../../../assets/hero-01.png'
 import user1 from '../../../assets/avatars/avatar-01.webp'
 import user2 from '../../../assets/avatars/avatar-02.webp'
 import user3 from '../../../assets/avatars/avatar-03.webp'
+import Highlight from "../../ui/Highlight.astro";
 const avatars = [
     {image: {src: user1.src, alt: 'user name'}, link: '/'},
     {image: {src: user2.src, alt: 'user name'}, link: '/'},
@@ -32,7 +33,7 @@ const avatars = [
     <Row>
         <Col span="2"/>
         <Col span="8" align="center">
-            <h1>Reduce Physician Burnout & Operational Costs with <strong>AI Built for Healthcare</strong></h1>
+            <h1 class="text-4xl md:text-5xl lg:text-7xl">Reduce Physician Burnout & Operational Costs with <Highlight type="4" colorFrom="#EA580C" colorTo="#7C3AED">AI Built for Healthcare</Highlight></h1>
 
             <p class="pb-0 text-lg">Seamlessly integrate with your EHR/ERP systems for enhanced efficiency and
                 accuracy</p>

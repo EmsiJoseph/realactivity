@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro'
 import Hero from '../components/blocks/hero/HomeCTA.astro'
 import Features from '../components/blocks/features/FeatureCards.astro'
 import Testimonial from '../components/blocks/testimonials/BasicDark.astro'
-import HighlightBlocks from '../components/blocks/highlights/HightlightRows.astro'
+import HighlightBlocks from '../components/blocks/highlights/HighlightRows.astro'
 import CTA from '../components/blocks/CTA/BasicDark.astro'
 import YouTubeEmbed from '../components/ui/YouTubeEmbed.astro'
 
@@ -17,6 +17,7 @@ import LogoCarousel from "../components/blocks/hero/LogoCarousel.astro";
 import MoreIntegrations from "../components/blocks/features/MoreIntegrations.astro";
 import Basic from "../components/blocks/socialproof/Basic.astro";
 import Metrics from "../components/blocks/socialproof/Metrics.astro";
+import Wheelhouse from "../components/blocks/features/Wheelhouse.astro";
 // - SEO
 const SEO = {
     title: 'RealActivity',
@@ -33,20 +34,23 @@ const SEO = {
     <Testimonial bg={testimonialBackground} bgPosition="right"/>
     <Metrics/>
     <HighlightBlocks/>
+    <!--Wheelhouse-->
+    <Wheelhouse/>
+    
     <YouTubeEmbed
             url="https://youtu.be/Ls3WOE9dhOQ?si=44ZYoMPxytFk-r5V"
             width="100%%"
             aspectRatio="16/9"
             class="max-w-4xl"
     />
-    // Wheelhouse
-    // Get AI Ready
-    // Raps Copilot
-    // Agents Suite
-    // One Seed
-    // Security Badges
-    // Advisory Services
-    // Founders Hub
-    // Community
+  
+    <!--Get AI Ready-->
+    <!--Raps Copilot-->
+    <!--Agents Suite-->
+    <!--One Seed-->
+    <!--Security Badges-->
+    <!--Advisory Services-->
+    <!--Founders Hub-->
+    <!--Community-->
     <CTA/>
 </Layout>

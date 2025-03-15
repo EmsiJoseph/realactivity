@@ -174,7 +174,7 @@ export const footerNavigationData: FooterData = {
         }
     ],
     subFooter: {
-        copyRightText: 'RealActivity, LLC. All rights reserved.',
+        copyRightText: 'RealActivity',
         links: [
             {
                 subCategory: 'Terms',

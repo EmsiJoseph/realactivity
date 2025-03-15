@@ -1,0 +1,60 @@
+---
+import Section from "../../ui/Section.astro";
+import { Image } from "astro:assets";
+import Button from "../../ui/Button.astro";
+
+const partners = [
+    { src: "/logo-vertical.svg", alt: "RealActivity" },
+    { src: "/partners/dartmouth-health.svg", alt: "Dartmouth Health" },
+    { src: "/partners/microsoft.svg", alt: "Microsoft" }
+];
+---
+
+<Section id="wheelhouse" classes="bg-primary-500 rounded-3xl md:rounded-[6rem] py-8 md:py-12 text-white text-center mb-48">
+    <div class="max-w-5xl mx-auto flex flex-col items-center space-y-12 px-4 md:px-6">
+        <!-- Restructured grouping: Logo on left, headline+logos on right -->
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-5 md:gap-8 w-full">
+            <!-- Wheelhouse logo - larger to match combined height -->
+            <div class="w-28 md:w-40 flex-shrink-0 self-center md:self-start">
+                <Image src="/partners/wheelhouse-primary.svg" alt="Wheelhouse AI CoE" width={300} height={300} class="w-full h-auto" />
+            </div>
+
+            <!-- Content column with headline and partner logos -->
+            <div class="flex flex-col text-white w-full gap-3 md:text-left">
+                <!-- Headline -->
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                    AI Governance Built<br class="hidden sm:block"> for Healthcare Leadership
+                </h2>
+                
+                <!-- Partner Logos moved under headline - now with content-width container -->
+                <div class="inline-flex flex-wrap md:justify-start justify-center gap-4 mt-2 w-auto">
+                    {partners.map((partner, index) => {
+                        // No div wrapper for Dartmouth Health logo (index 1)
+                        if (index === 1) {
+                            return <Image src={partner.src} alt={partner.alt} width={120} height={40} class="w-auto" />;
+                        }
+                        // Regular div wrapper for other logos
+                        return (
+                            <div class="bg-white rounded-lg px-3 py-2 md:px-4 shadow flex items-center">
+                                <Image src={partner.src} alt={partner.alt} width={120} height={40} class="max-h-10 w-auto" />
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+        </div>
+
+        <!-- Description - with explicit text-white -->
+        <p class="text-base md:text-lg max-w-3xl text-white">
+            <strong class="font-semibold">A center of excellence</strong> where innovation meets practicality. Board, leadership, and
+            organization training, governance, incident reporting, secure Copilot, and more. A collaboration with
+            RealActivity, Dartmouth Health, and Microsoft, delivered to the healthcare community by RealActivity.
+        </p>
+
+        <!-- CTA Button -->
+        <a href="#" class="bg-white text-black font-medium px-5 py-2.5 md:px-6 md:py-3 rounded-lg shadow hover:bg-gray-200 transition">
+            See all features
+        </a>
+    
+    </div>
+</Section>

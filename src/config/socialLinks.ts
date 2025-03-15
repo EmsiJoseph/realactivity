@@ -22,7 +22,7 @@ export const socialLinks: SocialLink[] = [
     {
         name: 'x',
         link: '/',
-        icon: 'simple-icons:x'  // Using X's new branding
+        icon: 'simple-icons:x'
     },
     {
         name: 'linkedin',
@@ -37,6 +37,6 @@ export const socialLinks: SocialLink[] = [
     {
         name: 'tiktok',
         link: '/',
-        icon: 'simple-icons:tiktok'  // Using simple-icons for TikTok as MDI doesn't have a specific TikTok icon
+        icon: 'simple-icons:tiktok'
     }
 ]

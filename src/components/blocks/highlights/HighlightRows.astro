@@ -16,68 +16,108 @@ import highlight03 from '../../../assets/highlights/highlight-03.svg'
 import highlight03mobile from '../../../assets/highlights/highlight-03-mobile.svg'
 import highlight04 from '../../../assets/highlights/highlight-04.svg'
 import highlight04mobile from '../../../assets/highlights/highlight-04-mobile.svg'
+import Section from "../../ui/Section.astro";
 
 type HighlightBlock = {
-	title: string
-	text: string
-	image: any
-	mobileImage?: any
-	imageWidth: number
-	imageHeight: number
-	imagePosition: 'left' | 'right'
+    title: string
+    text: string
+    image: any
+    mobileImage?: any
+    imageWidth: number
+    imageHeight: number
+    imagePosition: 'left' | 'right'
 }
 const highlightBlocks: HighlightBlock[] = [
-	{
-		title: 'Complete Project <strong>Visibility</strong>',
-		text: 'Gain complete visibility into your projects and tasks with our comprehensive dashboard. Easily track progress, deadlines, and team performance at a glance. Our dashboard offers real-time project tracking',
-		image: highlight01,
-		imageWidth: highlight01.width,
-		imageHeight: highlight01.height,
-		mobileImage: highlight01mobile,
-		imagePosition: 'right'
-	},
-	{
-		title: 'Advanced <strong>Automation</strong> Tools',
-		text: 'Automate repetitive tasks and streamline your workflow with our advanced automation tools. Save time and reduce errors by leveraging automated task assignments, workflow templates, and seamless integration with popular apps and services.',
-		image: highlight02,
-		mobileImage: highlight02mobile,
-		imageWidth: highlight02.width,
-		imageHeight: highlight02.height,
-		imagePosition: 'left'
-	},
-	{
-		title: '<strong>Effective</strong> Team Collaboration',
-		text: 'Enhance team communication and collaboration with our seamless tools. Keep everyone on the same page and ensure efficient project execution through real-time messaging, shared document editing, and task comments. ',
-		image: highlight03,
-		mobileImage: highlight03mobile,
-		imageWidth: highlight03.width,
-		imageHeight: highlight03.height,
-		imagePosition: 'right'
-	},
-	{
-		title: 'Robust Data <strong>Security</strong>',
-		text: 'Protect your data with our robust security features. We prioritize your privacy and security to ensure that your information is always safe. With end-to-end encryption, role-based access control, and regular security audits.',
-		image: highlight04,
-		mobileImage: highlight04mobile,
-		imageWidth: highlight04.width,
-		imageHeight: highlight04.height,
-		imagePosition: 'left'
-	}
+    {
+        title: 'Reduce Administrative <strong>Burden</strong>',
+        text: 'AI-powered solutions automate documentation, coding, and routine administrative tasks, freeing up your clinical staff to focus on what matters most—patient care. Reduce burnout and enhance job satisfaction among your healthcare professionals.',
+        image: highlight01,
+        imageWidth: highlight01.width,
+        imageHeight: highlight01.height,
+        mobileImage: highlight01mobile,
+        imagePosition: 'right'
+    },
+    {
+        title: 'Ensure Regulatory <strong>Compliance</strong>',
+        text: 'Stay ahead of complex healthcare regulations with AI that continuously monitors documentation and billing practices. Reduce compliance risks, avoid penalties, and maintain accurate reimbursements through automated verification and validation.',
+        image: highlight02,
+        mobileImage: highlight02mobile,
+        imageWidth: highlight02.width,
+        imageHeight: highlight02.height,
+        imagePosition: 'left'
+    },
+    {
+        title: 'Unlock Data-Driven <strong>Insights</strong>',
+        text: 'Transform your healthcare data into actionable intelligence. Our AI solutions analyze patterns across clinical and operational data to identify improvement opportunities, optimize resource allocation, and enhance patient outcomes.',
+        image: highlight03,
+        mobileImage: highlight03mobile,
+        imageWidth: highlight03.width,
+        imageHeight: highlight03.height,
+        imagePosition: 'right'
+    },
+    {
+        title: 'Maximize Financial <strong>Performance</strong>',
+        text: 'Optimize revenue cycles and resource utilization with AI that ensures accurate coding, appropriate reimbursement, and efficient operations. Identify revenue leakage points and implement data-driven strategies to improve your bottom line.',
+        image: highlight04,
+        mobileImage: highlight04mobile,
+        imageWidth: highlight04.width,
+        imageHeight: highlight04.height,
+        imagePosition: 'left'
+    }
 ]
+
+// Heading for the section
+const sectionHeading = {
+    title: "Here's why you need AI in your operations",
+    subtitle: "Discover how our intelligent solutions transform efficiency, compliance, and patient care"
+}
 ---
 
-{
-	highlightBlocks.map((highlight, key) => (
-		<TextImage
-			id={`highlight-${key}`}
-			title={highlight.title}
-			text={highlight.text}
-			image={highlight.image}
-			imageWidth={highlight.imageWidth}
-			imageHeight={highlight.imageHeight}
-			mobileImage={highlight.mobileImage}
-			imagePosition={highlight.imagePosition}
-			classes={key === 0 ? '!pb-0' : key === highlightBlocks.length - 1 ? '!pt-0' : '!py-0'}
-		/>
-	))
-}
+<Section id="highlights" padding="both">
+    <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">{sectionHeading.title}</h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">{sectionHeading.subtitle}</p>
+        
+        <div class="animated-arrow">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 4L12 20M12 20L18 14M12 20L6 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </div>
+
+    {
+        highlightBlocks.map((highlight, key) => (
+                <TextImage
+                        id={`highlight-${key}`}
+                        title={highlight.title}
+                        text={highlight.text}
+                        image={highlight.image}
+                        imageWidth={highlight.imageWidth}
+                        imageHeight={highlight.imageHeight}
+                        mobileImage={highlight.mobileImage}
+                        imagePosition={highlight.imagePosition}
+                        classes={key === 0 ? '!pb-0' : key === highlightBlocks.length - 1 ? '!pt-0' : '!py-0'}
+                />
+        ))
+    }
+</Section>
+
+<style>
+    .animated-arrow {
+        display: inline-block;
+        animation: bounce 2s infinite;
+        color: #4F46E5; /* Indigo color, but you can change to match your theme */
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(10px);
+        }
+        60% {
+            transform: translateY(5px);
+        }
+    }
+</style>
