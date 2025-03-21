@@ -19,18 +19,23 @@ const suffix = numericMatch ? numericMatch[2] : "";
 </div>
 
 <script>
-    // Counter animation function
-    function animateCounter(element, targetValue, suffix, duration = 2000) {
-        let startTime = null;
-        const startValue = 0;
-        const decimalPlaces = String(targetValue).includes('.') ? 
+    // Counter animation function with type safety
+    function animateCounter(
+        element: HTMLElement, 
+        targetValue: number, 
+        suffix: string, 
+        duration: number = 2000
+    ): void {
+        let startTime: number | null = null;
+        const startValue: number = 0;
+        const decimalPlaces: number = String(targetValue).includes('.') ? 
             String(targetValue).split('.')[1].length : 0;
             
-        function step(timestamp) {
+        function step(timestamp: number): void {
             if (!startTime) startTime = timestamp;
-            const progress = Math.min((timestamp - startTime) / duration, 1);
-            const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-            const currentValue = startValue + (targetValue - startValue) * easeProgress;
+            const progress: number = Math.min((timestamp - startTime) / duration, 1);
+            const easeProgress: number = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+            const currentValue: number = startValue + (targetValue - startValue) * easeProgress;
             
             element.textContent = currentValue.toFixed(decimalPlaces) + suffix;
             
@@ -43,18 +48,22 @@ const suffix = numericMatch ? numericMatch[2] : "";
     }
 
     // Set up Intersection Observer to trigger animation when counters are visible
-    document.addEventListener('DOMContentLoaded', () => {
-        const counters = document.querySelectorAll('.counter-value');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+    document.addEventListener('DOMContentLoaded', (): void => {
+        const counters: NodeListOf<HTMLElement> = document.querySelectorAll('.counter-value');
+        const observer: IntersectionObserver = new IntersectionObserver((entries: IntersectionObserverEntry[]): void => {
+            entries.forEach((entry: IntersectionObserverEntry): void => {
                 if (entry.isIntersecting) {
-                    const element = entry.target;
-                    const targetValue = parseFloat(element.getAttribute('data-value'));
-                    const suffix = element.getAttribute('data-suffix');
+                    const element = entry.target as HTMLElement;
+                    const dataValue = element.getAttribute('data-value');
+                    const dataSuffix = element.getAttribute('data-suffix');
                     
-                    animateCounter(element, targetValue, suffix);
-                    observer.unobserve(element); // Only animate once
+                    if (dataValue !== null) {
+                        const targetValue: number = parseFloat(dataValue);
+                        const suffix: string = dataSuffix || '';
+                        
+                        animateCounter(element, targetValue, suffix);
+                        observer.unobserve(element); // Only animate once
+                    }
                 }
             });
         }, {
@@ -62,7 +71,7 @@ const suffix = numericMatch ? numericMatch[2] : "";
         });
         
         // Observe all counter elements
-        counters.forEach(counter => {
+        counters.forEach((counter: HTMLElement): void => {
             observer.observe(counter);
         });
     });

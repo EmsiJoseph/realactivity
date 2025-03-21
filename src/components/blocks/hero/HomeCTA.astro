@@ -9,38 +9,30 @@ import Section from '../../ui/Section.astro'
 import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
 // - UI
-import ChipNotification from '../../ui/ChipNotification.astro'
 import Button from '../../ui/Button.astro'
-import AvatarGroup from '../../ui/AvatarGroup.astro'
-import LogoCarousel from "./LogoCarousel.astro";
 
-// Content
-// - Hero Image
-import heroImage from '../../../assets/hero-01.png'
-// - Avatars
-import user1 from '../../../assets/avatars/avatar-01.webp'
-import user2 from '../../../assets/avatars/avatar-02.webp'
-import user3 from '../../../assets/avatars/avatar-03.webp'
-import Highlight from "../../ui/Highlight.astro";
-const avatars = [
-    {image: {src: user1.src, alt: 'user name'}, link: '/'},
-    {image: {src: user2.src, alt: 'user name'}, link: '/'},
-    {image: {src: user3.src, alt: 'user name'}, link: '/'}
-]
----
+import Highlight from '../../ui/Highlight.astro'
+;<Section id="intro" padding="top" classes="bg-neutral-50 dark:bg-neutral-900">
+	<Row>
+		<Col span="2" />
+		<Col span="8" align="center">
+			<h1 class="text-4xl md:text-5xl lg:text-7xl">
+				Reduce Physician Burnout & Operational Costs with{' '}
+				<Highlight type="4" colorFrom="#EA580C" colorTo="#7C3AED">
+					AI Built for Healthcare
+				</Highlight>
+			</h1>
 
-<Section id="intro" padding="top" classes="bg-neutral-50 dark:bg-neutral-900">
-    <Row>
-        <Col span="2"/>
-        <Col span="8" align="center">
-            <h1 class="text-4xl md:text-5xl lg:text-7xl">Reduce Physician Burnout & Operational Costs with <Highlight type="4" colorFrom="#EA580C" colorTo="#7C3AED">AI Built for Healthcare</Highlight></h1>
-
-            <p class="pb-0 text-lg">Seamlessly integrate with your EHR/ERP systems for enhanced efficiency and
-                accuracy</p>
-            <Button size="lg" link="/">Get started</Button>
-        </Col>
-        <Col span="2"/>
-        <Col span="2"/>
-        <Col span="2"/>
-    </Row>
+			<p class="pb-0 text-lg">
+				Seamlessly integrate with your EHR/ERP systems for enhanced efficiency and accuracy
+			</p>
+			<Button size="lg" link="/">
+				Get started
+			</Button>
+		</Col>
+		<Col span="2" />
+		<Col span="2" />
+		<Col span="2" />
+	</Row>
 </Section>
+---
