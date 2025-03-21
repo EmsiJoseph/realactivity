@@ -2,229 +2,241 @@
 	{
 		"title": "Real-Time Analytics",
 		"icon": "chart-pie",
-		"description": "Gain valuable insights instantly with Foxi's real-time analytics. Track performance metrics, user behavior, and campaign effectiveness effortlessly.",
-		"category": "Analytics"
+		"description": "Gain valuable insights instantly with Wheelhouse AI's real-time analytics. Track performance metrics, user behavior, and healthcare outcomes effortlessly.",
+		"category": "Wheelhouse AI CoE"
 	},
 	{
 		"title": "Customizable Dashboards",
 		"icon": "squares-plus",
-		"description": "Tailor your workspace with personalized dashboards that suit your workflow. Stay organized and focused on what matters most to your business.",
-		"category": "Analytics"
-	},
-	{
-		"title": "Task Management",
-		"icon": "cliboard-document-check",
-		"description": "Efficiently manage tasks and projects with Foxi's intuitive task management tools. Assign, track progress, and collaborate seamlessly.",
-		"category": "Productivity"
-	},
-	{
-		"title": "Third-Party Apps",
-		"icon": "rocket",
-		"description": "Connect Foxi with your favorite tools and apps effortlessly. Streamline workflows and enhance productivity with seamless integrations.",
-		"category": "Productivity"
-	},
-	{
-		"title": "Mobile Accessibility",
-		"icon": "device-phone-mobile",
-		"description": "Stay productive on the go with Foxi's mobile app. Access key features, collaborate with your team, and manage tasks anytime, anywhere.",
-		"category": "Support"
-	},
-	{
-		"title": "Dedicated Customer Support",
-		"icon": "trophy",
-		"description": "Receive exceptional customer support whenever you need it. Our dedicated team is here 24/7 to assist you with any questions or issues.",
-		"category": "Support"
-	},
-	{
-		"title": "Robust Data Security",
-		"icon": "shield-check",
-		"description": "Rest assured knowing your data is safe with Foxi's robust security measures. We employ industry-standard protocols to protect your information.",
-		"category": "Security"
-	},
-	{
-		"title": "Scalability",
-		"icon": "arrow-treding-up",
-		"description": "Grow your business with confidence using Foxi's scalable platform. Whether you're a startup or a large enterprise, our solution adapts to your needs.",
-		"category": "Security"
-	},
-	{
-		"title": "Real-Time Notifications",
-		"icon": "bell-alert",
-		"description": "Stay updated with real-time notifications for important events and updates. Never miss out on critical information with instant alerts.",
-		"category": "Security"
+		"description": "Tailor your workspace with personalized dashboards that suit your clinical workflow. Stay organized and focused on what matters most to your healthcare organization.",
+		"category": "Wheelhouse AI CoE"
 	},
 	{
 		"title": "Advanced Reporting",
 		"icon": "clipboard-document-list",
-		"description": "Generate detailed reports with advanced analytics features. Customize reports to track key performance indicators and gain deeper insights.",
-		"category": "Analytics"
-	},
-	{
-		"title": "Team Collaboration Tools",
-		"icon": "user-group",
-		"description": "Enhance team collaboration with tools designed for effective communication and project management. Share updates, files, and feedback seamlessly.",
-		"category": "Productivity"
-	},
-	{
-		"title": "In-App Messaging",
-		"icon": "chat-bubble-left-right",
-		"description": "Communicate directly within the app using in-app messaging. Keep conversations organized and accessible without switching between tools.",
-		"category": "Integrations"
-	},
-	{
-		"title": "Multi-Device Sync",
-		"icon": "computer-desktop",
-		"description": "Ensure seamless access to your data across all devices. Sync your information in real-time, so you can work from anywhere with consistency.",
-		"category": "Support"
-	},
-	{
-		"title": "Customizable Alerts",
-		"icon": "bell",
-		"description": "Set up customizable alerts to notify you of important events and changes. Tailor notifications to your needs for better management and response.",
-		"category": "Support"
-	},
-	{
-		"title": "API Integrations",
-		"icon": "arrow-path-rounded-square",
-		"description": "Integrate with other systems and services using our flexible API. Expand functionality and connect with external tools effortlessly.",
-		"category": "Integrations"
-	},
-	{
-		"title": "User Role Management",
-		"icon": "user",
-		"description": "Manage user roles and permissions with ease. Control access levels and ensure the right people have the right permissions for your project.",
-		"category": "Security"
+		"description": "Generate detailed healthcare reports with advanced analytics features. Customize reports to track key performance indicators and gain deeper insights into patient care.",
+		"category": "Wheelhouse AI CoE"
 	},
 	{
 		"title": "Custom Themes",
 		"icon": "paint-brush",
-		"description": "Customize the look and feel of your workspace with custom themes. Choose from various design options to match your brand's style.",
-		"category": "Analytics"
-	},
-	{
-		"title": "Data Backup",
-		"icon": "circle-stack",
-		"description": "Protect your data with regular backups. Ensure that your information is safe and recoverable in case of unexpected issues or data loss.",
-		"category": "Security"
+		"description": "Customize the look and feel of your Wheelhouse AI workspace with custom themes. Choose from various design options to match your organization's branding.",
+		"category": "Wheelhouse AI CoE"
 	},
 	{
 		"title": "Performance Tracking",
 		"icon": "arrow-trending-up",
-		"description": "Monitor and track performance metrics to ensure optimal efficiency. Use performance data to make informed decisions and improvements.",
-		"category": "Analytics"
-	},
-	{
-		"title": "Interactive Tutorials",
-		"icon": "document-chart-bar",
-		"description": "Access interactive tutorials to get the most out of our features. Learn new skills and improve your proficiency with guided, hands-on experiences.",
-		"category": "Support"
+		"description": "Monitor and track healthcare performance metrics to ensure optimal efficiency. Use AI-driven performance data to make informed clinical decisions and improvements.",
+		"category": "Wheelhouse AI CoE"
 	},
 	{
 		"title": "Custom Widgets",
 		"icon": "squares-plus",
-		"description": "Enhance your dashboard with custom widgets. Add and configure widgets to display the most relevant information for your needs.",
-		"category": "Analytics"
+		"description": "Enhance your healthcare dashboard with custom widgets. Add and configure widgets to display the most relevant clinical information for your needs.",
+		"category": "Wheelhouse AI CoE"
 	},
 	{
 		"title": "Data Visualization",
 		"icon": "eye",
-		"description": "Visualize your data with advanced charting and graphing tools. Create insightful visual representations to better understand your metrics.",
-		"category": "Analytics"
+		"description": "Visualize your healthcare data with advanced charting and graphing tools. Create insightful visual representations to better understand your clinical metrics.",
+		"category": "Wheelhouse AI CoE"
 	},
 	{
-		"title": "Integration Marketplace",
-		"icon": "shopping-cart",
-		"description": "Explore our marketplace for additional integrations and plugins. Extend the functionality of your platform with third-party solutions.",
-		"category": "Integrations"
+		"title": "AI-Powered Insights",
+		"icon": "light-bulb",
+		"description": "Leverage cutting-edge AI algorithms to discover hidden patterns in healthcare data. Receive intelligent recommendations for improving clinical workflows and patient outcomes.",
+		"category": "Wheelhouse AI CoE"
 	},
 	{
-		"title": "Onboarding Assistance",
-		"icon": "user",
-		"description": "Get personalized onboarding assistance to help you set up and start using our platform effectively. Benefit from expert guidance to ensure a smooth start.",
-		"category": "Support"
+		"title": "Task Management",
+		"icon": "cliboard-document-check",
+		"description": "Efficiently manage provider tasks with RAPS Copilot's intuitive task management tools. Assign, track progress, and collaborate seamlessly across your healthcare team.",
+		"category": "RAPS Copilot"
 	},
 	{
-		"title": "Knowledge Base",
-		"icon": "document-text",
-		"description": "Access a comprehensive knowledge base with articles, guides, and FAQs. Find answers to common questions and learn how to make the most of our features.",
-		"category": "Support"
+		"title": "Mobile Accessibility",
+		"icon": "device-phone-mobile",
+		"description": "Stay productive on the go with RAPS Copilot's mobile app. Access key features, collaborate with your healthcare team, and manage tasks anytime, anywhere.",
+		"category": "RAPS Copilot"
 	},
 	{
-		"title": "Live Chat Support",
-		"icon": "chat-bubble-left-ellipsis",
-		"description": "Connect with our support team via live chat for immediate assistance. Get answers to your questions and resolve issues in real time.",
-		"category": "Support"
+		"title": "Team Collaboration Tools",
+		"icon": "user-group",
+		"description": "Enhance provider team collaboration with tools designed for effective healthcare communication. Share patient updates, files, and clinical feedback seamlessly.",
+		"category": "RAPS Copilot"
+	},
+	{
+		"title": "In-App Messaging",
+		"icon": "chat-bubble-left-right",
+		"description": "Communicate directly within RAPS Copilot using secure in-app messaging. Keep clinical conversations organized and accessible without switching between tools.",
+		"category": "RAPS Copilot"
 	},
 	{
 		"title": "Customizable Workspaces",
 		"icon": "cursor-arrow-ripple",
-		"description": "Personalize your workspace layout to fit your needs. Adjust and configure your workspace for maximum efficiency and comfort.",
-		"category": "Productivity"
+		"description": "Personalize your RAPS workspace layout to fit your clinical workflow. Adjust and configure your workspace for maximum efficiency and provider comfort.",
+		"category": "RAPS Copilot"
 	},
 	{
 		"title": "Task Automation",
 		"icon": "rectangle-stack",
-		"description": "Automate routine tasks to improve efficiency and reduce manual work. Set up automated processes to streamline your workflow.",
-		"category": "Productivity"
-	},
-	{
-		"title": "Accessibility Features",
-		"icon": "eye-slash",
-		"description": "Explore features designed to enhance accessibility. Ensure your tools and workspace are usable for all team members, including those with disabilities.",
-		"category": "Security"
-	},
-	{
-		"title": "Enhanced Mobile Access",
-		"icon": "mobile",
-		"description": "Benefit from enhanced mobile access features. Use our app to stay connected and productive with improved functionality on mobile devices.",
-		"category": "Security"
+		"description": "Automate routine clinical tasks to improve efficiency and reduce provider burnout. Set up automated processes to streamline your healthcare workflow.",
+		"category": "RAPS Copilot"
 	},
 	{
 		"title": "Advanced Bug Tracking",
 		"icon": "bug-ant",
-		"description": "Track tasks and projects with advanced tracking features. Monitor progress, set milestones, and manage your projects more effectively.",
-		"category": "Productivity"
+		"description": "Track clinical tasks and healthcare projects with advanced tracking features. Monitor progress, set milestones, and manage your provider initiatives more effectively.",
+		"category": "RAPS Copilot"
 	},
 	{
-		"title": "Comprehensive Balancer",
-		"icon": "scale",
-		"description": "Access comprehensive support resources to assist users at all levels. From troubleshooting to advanced tips, get the help you need.",
-		"category": "Support"
-	},
-	{
-		"title": "Voice Recordings",
+		"title": "Voice-Activated Assistant",
 		"icon": "microphone",
-		"description": "Receive real-time updates on accessibility features and improvements. Stay informed about changes that impact your mobile and web access.",
-		"category": "Support"
+		"description": "Use voice commands to navigate RAPS Copilot, document patient encounters, and access critical information hands-free during clinical workflows.",
+		"category": "RAPS Copilot"
 	},
 	{
-		"title": "User Identity Verification",
-		"icon": "identification",
-		"description": "Analyze productivity metrics to optimize performance. Gain insights into team and individual productivity to drive improvements.",
-		"category": "Productivity"
+		"title": "Robust Data Security",
+		"icon": "shield-check",
+		"description": "Rest assured knowing your RVU data is safe with industry-leading security measures. We employ HIPAA-compliant protocols to protect your sensitive information.",
+		"category": "Intelligent RVU Agent"
+	},
+	{
+		"title": "Scalability",
+		"icon": "arrow-trending-up",
+		"description": "Grow your healthcare practice with confidence using our scalable RVU platform. Whether you're a small clinic or a large hospital system, our solution adapts to your needs.",
+		"category": "Intelligent RVU Agent"
+	},
+	{
+		"title": "Real-Time Notifications",
+		"icon": "bell-alert",
+		"description": "Stay updated with real-time notifications for important RVU events and updates. Never miss critical reimbursement information with instant alerts.",
+		"category": "Intelligent RVU Agent"
+	},
+	{
+		"title": "User Role Management",
+		"icon": "user",
+		"description": "Manage RVU access roles and permissions with ease. Control access levels and ensure the right healthcare staff have appropriate permissions for billing data.",
+		"category": "Intelligent RVU Agent"
+	},
+	{
+		"title": "Data Backup",
+		"icon": "circle-stack",
+		"description": "Protect your RVU data with regular automated backups. Ensure that your reimbursement information is safe and recoverable in case of unexpected issues.",
+		"category": "Intelligent RVU Agent"
+	},
+	{
+		"title": "Intelligent RVU Prediction",
+		"icon": "mdi:chart-bar",
+		"description": "Leverage AI algorithms to predict future RVU patterns and optimize provider scheduling for maximum reimbursement efficiency.",
+		"category": "Intelligent RVU Agent"
+	},
+	{
+		"title": "Automated RVU Calculation",
+		"icon": "mdi:calculator",
+		"description": "Eliminate manual calculations with our intelligent system that automatically processes clinical activities and assigns appropriate RVU values in real-time.",
+		"category": "Intelligent RVU Agent"
+	},
+	{
+		"title": "Provider Performance Metrics",
+		"icon": "mdi:user-circle",
+		"description": "Track individual and team RVU performance with customizable metrics that highlight opportunities for improved clinical efficiency and revenue.",
+		"category": "Intelligent RVU Agent"
+	},
+	{
+		"title": "Dedicated Customer Support",
+		"icon": "trophy",
+		"description": "Receive exceptional compliance support whenever you need it. Our dedicated team is here to assist you with any CMS regulation questions or issues.",
+		"category": "CMS Compliance Agent"
+	},
+	{
+		"title": "Multi-Device Sync",
+		"icon": "computer-desktop",
+		"description": "Ensure seamless access to your compliance data across all devices. Sync your CMS information in real-time, so you can work from anywhere with consistency.",
+		"category": "CMS Compliance Agent"
+	},
+	{
+		"title": "Customizable Alerts",
+		"icon": "bell",
+		"description": "Set up customizable alerts to notify you of important CMS regulation changes. Tailor notifications to your needs for better compliance management.",
+		"category": "CMS Compliance Agent"
+	},
+	{
+		"title": "Interactive Tutorials",
+		"icon": "document-chart-bar",
+		"description": "Access interactive tutorials on CMS regulations. Learn new compliance requirements and improve your regulatory knowledge with guided experiences.",
+		"category": "CMS Compliance Agent"
+	},
+	{
+		"title": "Knowledge Base",
+		"icon": "document-text",
+		"description": "Access a comprehensive knowledge base with articles, guides, and FAQs on CMS regulations. Find answers to common compliance questions quickly.",
+		"category": "CMS Compliance Agent"
+	},
+	{
+		"title": "Live Chat Support",
+		"icon": "chat-bubble-left-ellipsis",
+		"description": "Connect with our compliance experts via live chat for immediate assistance. Get answers to your CMS regulation questions and resolve issues in real time.",
+		"category": "CMS Compliance Agent"
+	},
+	{
+		"title": "Comprehensive Regulation Tracker",
+		"icon": "scale",
+		"description": "Monitor all relevant CMS regulations with our comprehensive tracking system. Stay informed of changes and deadlines with automated compliance calendars.",
+		"category": "CMS Compliance Agent"
+	},
+	{
+		"title": "Automated Compliance Reporting",
+		"icon": "mdi:file-document-check-outline",
+		"description": "Generate required CMS compliance reports automatically, saving time and reducing the risk of errors in regulatory submissions.",
+		"category": "CMS Compliance Agent"
+	},
+	{
+		"title": "Third-Party Apps",
+		"icon": "rocket",
+		"description": "Connect our Strategic Advisory Services with your favorite tools and apps effortlessly. Streamline AI implementation workflows for enhanced productivity.",
+		"category": "Strategic Advisory Services"
+	},
+	{
+		"title": "API Integrations",
+		"icon": "arrow-path-rounded-square",
+		"description": "Integrate with other AI systems and services using our flexible API. Expand functionality and connect Microsoft Copilot and OpenAI tools effortlessly.",
+		"category": "Strategic Advisory Services"
+	},
+	{
+		"title": "Integration Marketplace",
+		"icon": "shopping-cart",
+		"description": "Explore our marketplace for additional AI integrations and plugins. Extend the functionality of your platform with third-party AI solutions.",
+		"category": "Strategic Advisory Services"
+	},
+	{
+		"title": "Onboarding Assistance",
+		"icon": "user",
+		"description": "Get personalized AI implementation assistance to help you set up and start using advanced AI tools effectively within your healthcare organization.",
+		"category": "Strategic Advisory Services"
 	},
 	{
 		"title": "Payment Integrations",
 		"icon": "credit-card",
-		"description": "Communicate directly within the app using in-app messaging. Keep conversations organized and accessible without switching between tools.",
-		"category": "Integrations"
+		"description": "Simplify billing for AI services with seamless payment gateway integrations. Manage subscription costs for Microsoft Copilot and OpenAI services efficiently.",
+		"category": "Strategic Advisory Services"
 	},
 	{
-		"title": "Transparent API ",
+		"title": "Transparent API",
 		"icon": "cube-transparent",
-		"description": "Seamlessly integrate with third-party APIs to extend the functionality of your app. Enjoy smooth data exchange and enhanced performance.",
-		"category": "Integrations"
+		"description": "Seamlessly integrate with Microsoft Copilot and OpenAI APIs to extend the functionality of your healthcare systems. Enjoy smooth data exchange and enhanced performance.",
+		"category": "Strategic Advisory Services"
 	},
 	{
-		"title": "Clever CRM Integration",
-		"icon": "light-bulb",
-		"description": "Connect your app with popular CRM systems to streamline customer management. Synchronize data and improve customer relationship processes.",
-		"category": "Integrations"
+		"title": "AI Implementation Roadmapping",
+		"icon": "mdi:map",
+		"description": "Receive customized implementation plans for integrating AI technologies into your existing healthcare workflows, with clear timelines and measurable outcomes.",
+		"category": "Strategic Advisory Services"
 	},
 	{
-		"title": "API key Integration",
-		"icon": "key",
-		"description": "Integrate multiple payment gateways to offer diverse payment options. Ensure secure transactions and smooth payment processing for users.",
-		"category": "Integrations"
+		"title": "ROI Analysis",
+		"icon": "mdi:chart-line",
+		"description": "Get detailed analysis of expected and realized return on investment for your AI implementations, helping justify technology expenses to stakeholders.",
+		"category": "Strategic Advisory Services"
 	}
 ]

@@ -22,26 +22,34 @@ type Props = {
 	text?: string
 	data: FeatureData[]
 	classes?: string
+	id?: string
 }
-const { title, text, data, classes } = Astro.props
+const { title, text, data, classes, id } = Astro.props
 ---
 
-<StickySidebar classes={classes}>
-	<header slot="sidebar">
-		{title && <h3 class="text-3xl">{title}</h3>}
-		{text && <p class="text-lg leading-relaxed">{text}</p>}
-	</header>
+<section id={id} class="section-padding scroll-mt-24">
+  <StickySidebar classes=`${classes} px-10 py-20`>
+    <header slot="sidebar" class="fade-in-bottom">
+      {title && <h3 class="text-3xl">{title}</h3>}
+      {text && <p class="text-lg leading-relaxed">{text}</p>}
+    </header>
 
-	<Row>
-		{
-			// Map through the filtered features and render them
-			data.map((feature: FeatureData) => (
-				<Col span="4">
-					<Feature title={feature.title} icon={feature.icon} align="left" classes="mb-12">
-						{feature.description}
-					</Feature>
-				</Col>
-			))
-		}
-	</Row>
-</StickySidebar>
+    <Row>
+      {
+        // Map through the filtered features and render them
+        data.map((feature: FeatureData, index) => (
+          <Col span="4">
+            <Feature 
+              title={feature.title} 
+              icon={feature.icon} 
+              align="left" 
+              classes={`mb-12 fade-in ${index % 3 === 0 ? 'delay-100' : index % 3 === 1 ? 'delay-200' : 'delay-300'}`}
+            >
+              {feature.description}
+            </Feature>
+          </Col>
+        ))
+      }
+    </Row>
+  </StickySidebar>
+</section>

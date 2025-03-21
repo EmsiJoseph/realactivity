@@ -15,28 +15,20 @@ import Col from '../../ui/Col.astro'
 
 // Props
 type Props = {
-	id?: string
-	type?: 'left' | 'right'
-	classes?: string
+  classes?: string
 }
-const { id, type = 'left', classes } = Astro.props
+const { classes = '' } = Astro.props
 ---
 
-<Section {...id ? { id } : {}} classes={classes} stickyCol>
-	<Row>
-		<Col span="3" classes={type === 'right' ? 'lg:order-2' : ''}>
-			<div class="sticky-sidebar">
-				<slot name="sidebar" />
-			</div>
-		</Col>
-		<Col span="9">
-			<slot />
-		</Col>
-	</Row>
-</Section>
-
-<style>
-	.sticky-sidebar {
-		@apply lg:sticky lg:top-32;
-	}
-</style>
+<div class={classes}>
+  <div class="container">
+    <div class="flex flex-col lg:flex-row gap-8 lg:gap-16">
+      <div class="lg:w-1/3 lg:sticky lg:top-24 lg:self-start">
+        <slot name="sidebar" />
+      </div>
+      <div class="lg:w-2/3">
+        <slot />
+      </div>
+    </div>
+  </div>
+</div>
