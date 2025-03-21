@@ -12,10 +12,10 @@ const suffix = numericMatch ? numericMatch[2] : "";
 ---
 
 <div class="flex flex-col items-center text-center md:items-start md:text-left mb-4 md:mb-0">
-    <p class="text-3xl sm:text-4xl md:text-5xl font-bold text-black">
+    <p class="text-3xl sm:text-4xl md:text-5xl font-bold text-black dark:text-white">
         <span class="counter-value" data-value={numericValue} data-suffix={suffix}>0{suffix}</span>
     </p>
-    <p class="text-sm sm:text-base md:text-lg text-black mt-1">{label}</p>
+    <p class="text-sm sm:text-base md:text-lg text-black dark:text-white mt-1">{label}</p>
 </div>
 
 <script>
@@ -47,8 +47,8 @@ const suffix = numericMatch ? numericMatch[2] : "";
         window.requestAnimationFrame(step);
     }
 
-    // Set up Intersection Observer to trigger animation when counters are visible
-    document.addEventListener('DOMContentLoaded', (): void => {
+    // Function to initialize counters
+    function initializeCounters(): void {
         const counters: NodeListOf<HTMLElement> = document.querySelectorAll('.counter-value');
         const observer: IntersectionObserver = new IntersectionObserver((entries: IntersectionObserverEntry[]): void => {
             entries.forEach((entry: IntersectionObserverEntry): void => {
@@ -74,5 +74,16 @@ const suffix = numericMatch ? numericMatch[2] : "";
         counters.forEach((counter: HTMLElement): void => {
             observer.observe(counter);
         });
-    });
+    }
+
+    // Try to use Astro's page-load event for View Transitions (works in Astro 2.9+)
+    if (document.addEventListener) {
+        document.addEventListener('astro:page-load', initializeCounters);
+    }
+    
+    // Fallback for older Astro versions or if View Transitions are not enabled
+    if (!import.meta.env.DEV || !document.body.hasAttribute('data-astro-transition')) {
+        document.addEventListener('DOMContentLoaded', initializeCounters);
+        window.addEventListener('popstate', initializeCounters);
+    }
 </script>

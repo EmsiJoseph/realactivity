@@ -22,8 +22,7 @@ export interface Config {
 
 export const configData: Config = {
 	siteTitle: 'RealActivity',
-	siteDescription:
-		'Reduce Physician Burnout & Operational Costs with AI built for Healthcare.',
+	siteDescription: 'Reduce Physician Burnout & Operational Costs with AI built for Healthcare.',
 	ogImage: '/og.jpg',
 	logo: {
 		src: '/logo.svg',
