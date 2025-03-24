@@ -1,0 +1,42 @@
+---
+import Highlight from '../../ui/Highlight.astro'
+import Section from '../../ui/Section.astro'
+---
+
+<Section id="emailForm" padding="bottom">
+	<div class="flex flex-col items-center">
+		<h2 class="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+			Get <Highlight>AI Ready</Highlight>
+		</h2>
+		<h3 class="font-medium text-primary-500">
+			Get Daily Insights & Free Data Sheets for Health Executives.
+		</h3>
+
+		<div class="inline-flex flex-col items-center justify-start gap-4">
+			<div
+				class="text-theme-muted-foreground justify-center  text-lg font-medium leading-7"
+			>
+				Sign up for our newsletter for free access to data sheets and articles on AI in healthcare.
+			</div>
+			<form 
+				action="https://formcarry.com/s/iYazfuA_G2j" 
+				method="POST"
+				class="inline-flex w-full max-w-3xl items-start justify-between flex-col sm:flex-row px-4 sm:px-0 gap-2 sm:gap-0"
+			>
+				<input
+					type="email"
+					name="email"
+					placeholder="Email"
+					required
+					class="bg-theme-background border-theme-input flex h-16 flex-1 w-full sm:w-auto items-center justify-start gap-3.5 rounded-xl sm:rounded-r-none sm:rounded-bl-xl sm:rounded-tl-xl border-2 sm:border-r-0 px-5 py-3.5 text-theme-muted-foreground  text-2xl font-normal leading-loose"
+				/>
+				<button
+					type="submit"
+					class="flex h-16 w-full sm:w-56 items-center justify-center gap-3.5 rounded-xl sm:rounded-l-none sm:rounded-br-xl sm:rounded-tr-xl bg-orange-600 px-5 py-3.5  text-2xl font-semibold leading-loose text-white"
+				>
+					Subscribe
+				</button>
+			</form>
+		</div>
+	</div>
+</Section>
