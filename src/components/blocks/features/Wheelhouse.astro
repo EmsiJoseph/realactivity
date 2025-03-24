@@ -20,18 +20,32 @@ const partners = [
                 <Image src="/partners/wheelhouse-primary.svg" alt="Wheelhouse AI CoE" width={300} height={300} class="w-28 md:w-40 mx-auto" />
             </Col>
 
-            <!-- Content column with headline and partner logos - removed align="center" -->
-            <Col span="9" spanMobile="12" classes="flex flex-col text-white gap-3 md:text-left fade-in delay-100">
+            <!-- Content column with headline and partner logos -->
+            <Col span="9" spanMobile="12" classes="flex flex-col text-white gap-3 lg:text-left fade-in delay-100">
                 <!-- Headline -->
                 <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
                     AI Governance Built<br class="hidden sm:block"> for Healthcare Leadership
                 </h2>
                 
                 <!-- Partner Logos with justify-start instead of justify-center -->
-                <div class="inline-flex flex-wrap md:justify-start justify-center gap-4 mt-2 w-auto">
+                <div class="inline-flex flex-wrap lg:justify-start justify-center gap-4 mt-2 w-auto">
                     {partners.map((partner, index) => {
+                        // Special handling for RealActivity logo (index 0)
+                        if (index === 0) {
+                            return (
+                                <div class={`bg-white rounded-lg px-2 py-2 md:px-3 shadow flex items-center fade-in delay-${(index + 2) * 100}`}>
+                                    <Image 
+                                        src={partner.src} 
+                                        alt={partner.alt} 
+                                        width={150} 
+                                        height={50} 
+                                        class="h-8 sm:h-10 md:h-12 w-auto object-contain" 
+                                    />
+                                </div>
+                            );
+                        }
                         // No div wrapper for Dartmouth Health logo (index 1)
-                        if (index === 1) {
+                        else if (index === 1) {
                             return <Image src={partner.src} alt={partner.alt} width={120} height={40} class="w-auto fade-in delay-200" />;
                         }
                         // Regular div wrapper for other logos
